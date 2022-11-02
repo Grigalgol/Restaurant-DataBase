@@ -20,6 +20,6 @@ public class Tables {
 
     private Long amountBooking;
 
-    @OneToMany(fetch=FetchType.LAZY)
-    private List<Order> orders;
+    @OneToMany(fetch=FetchType.EAGER, mappedBy = "table")
+    private List<Orders> orders;
 }

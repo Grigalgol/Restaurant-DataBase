@@ -18,6 +18,6 @@ public class Client {
     private String name;
     private String phoneNumber;
 
-    @OneToMany(fetch=FetchType.LAZY)
-    private List<Order> orders;
+    @OneToMany(fetch=FetchType.EAGER, mappedBy = "client")
+    private List<Orders> orders;
 }

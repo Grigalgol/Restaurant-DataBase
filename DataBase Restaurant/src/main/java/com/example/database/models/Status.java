@@ -10,15 +10,13 @@ import java.util.List;
 @Table
 @Data
 @NoArgsConstructor
-public class Waiter {
-
+public class Status {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    private String name;
-    private String phoneNumber;
+    private String title;
 
-    @OneToMany(fetch=FetchType.EAGER, mappedBy = "waiter")
-    List<Orders> orders;
+    @OneToMany(fetch=FetchType.EAGER, mappedBy = "status")
+    private List<Orders> orders;
 }
