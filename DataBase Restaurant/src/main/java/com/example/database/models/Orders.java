@@ -19,7 +19,7 @@ public class Orders {
     private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    private Client client;
+    private User user;
 
     @ManyToOne(fetch = FetchType.EAGER)
     private Waiter waiter;
