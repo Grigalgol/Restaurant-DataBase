@@ -31,11 +31,5 @@ public class UserServiceImpl implements UserService {
         return userRepository.save(user);
     }
 
-    @Override
-    public UserDetails loadUserByUsername(String phoneNumber) throws UsernameNotFoundException {
-        User user = userRepository.findByPhoneNumber(phoneNumber).orElseThrow(() ->
-                new UsernameNotFoundException("User doesn't exists"));
-        return new org.springframework.security.core.userdetails.User(
-                user.getPhoneNumber(), user.getPassword(), user.getRole().getAuthorities());
-    }
+
 }
